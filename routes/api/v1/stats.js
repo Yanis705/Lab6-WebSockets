@@ -4,7 +4,7 @@ const statsController = require('../../../controllers/api/v1/stats');
 
 router.get("/", statsController.getStats);
 
-router.post("/", statsController.postStats);
+router.post("/addstats", statsController.addstats);
 
 router.put("/updatestats", statsController.updateStats);
 

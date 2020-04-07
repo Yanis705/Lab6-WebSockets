@@ -9,7 +9,7 @@ const usersRouter = require('./routes/users');
 const apiStatsRouter = require('./routes/api/v1/stats');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/stats', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/stats', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
 

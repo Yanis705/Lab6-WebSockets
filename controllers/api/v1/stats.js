@@ -1,37 +1,57 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const statsSchema = new Schama({
-    number: String
-});
-const Stats = mongoose.model('Stats', statsSchema);
+const Stats = require('../../../models/stats');
 
 const getStats = (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "number": 12
+    Stats.find({
+        "number": "11"
+    }, (err, doc) => {
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": {
+                    "number": doc
+                }
+            });
         }
     });
 }
 
 const updateStats = (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "number": 12
+    Stats.findOneAndUpdate({"country": req.body.country}, {"number": req.body.number}, {new: true}, (err, doc) => {
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": doc
+            }); 
+        }
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "Could not update stats"
+            });
         }
     });
 }
 
-const postStats = (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "number": 12
+const addstats = (req, res, next) => {
+    let stats = new Stats();
+    stats.number = req.body.number;
+    stats.country = req.body.country;
+    stats.save((err, doc) => {
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "Could not save stats"
+            });
+        }
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": doc
+            });
         }
     });
 }
 
 module.exports.getStats = getStats;
 module.exports.updateStats = updateStats;
-module.exports.updateStats = postStats;
+module.exports.addstats = addstats;
