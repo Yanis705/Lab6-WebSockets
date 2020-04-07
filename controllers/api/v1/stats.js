@@ -1,15 +1,11 @@
 const Stats = require('../../../models/stats');
 
 const getStats = (req, res) => {
-    Stats.find({
-        "number": "11"
-    }, (err, doc) => {
+    Stats.find({}, (err, doc) => {
         if(!err){
             res.json({
                 "status": "success",
-                "data": {
-                    "number": doc
-                }
+                "data": doc
             });
         }
     });
