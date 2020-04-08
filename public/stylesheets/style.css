@@ -10,11 +10,11 @@ section {
   margin-right: auto;
 }
 
-#cases{
+#cases {
   margin-top: 50px;
 }
 
-.case{
+.case {
   background-color: #F2F2F2;
   width: 30%;
   margin-left: 1.5%;
@@ -24,13 +24,33 @@ section {
   margin-bottom: 30px;
 }
 
-.case p{
+.case p {
   font-weight: 400;
 }
 
 @media only screen and (max-width: 700px) {
-  .case{
+  .case {
     width: 45%;
     margin-left: 2.5%;
     margin-right: 2.5%;
+  }
+}
+
+#updateForm{
+  text-align: center;
+}
+
+input, select{
+  display: block;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#submit{
+  padding: 10px 30px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
 }

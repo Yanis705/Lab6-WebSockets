@@ -3,17 +3,20 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,900&display=swap", rel="stylesheet")
     title Update Stats
   body
     section
-      div
-        label(for='number') Number of easter eggs
-        input#number(type='text' name='number')
+      div#updateForm
+        h1 Update Stats
         label(for='country') Country
-        select#country(name='country')
-          option(value='Belgium' selected='selected') Belgium
-          option(value='Netherlands') Netherlands
-          option(value='Easter Island') Easter Island
-      button#submit(href='#') Update statistics
+          select#country(name='country')
+            option(value='Belgium' selected='selected') Belgium
+            option(value='Netherlands') Netherlands
+            option(value='Easter Island') Easter Island
+          label(for='number') Number of easter eggs
+          input#number(type='number' name='number')
+        a#submit(href='#') Update statistics
 
     script(src='/javascripts/update.js')
