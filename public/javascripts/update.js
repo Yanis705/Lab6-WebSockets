@@ -1,3 +1,4 @@
+const config = require('config');
 const base_url = config.get('BaseUrl.url');
 
 primus = Primus.connect(base_url, {

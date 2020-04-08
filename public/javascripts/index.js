@@ -1,3 +1,4 @@
+const config = require('config');
 let parent = document.querySelector("#cases");
 const base_url = config.get('BaseUrl.url');
 
