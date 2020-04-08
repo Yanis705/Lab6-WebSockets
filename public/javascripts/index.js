@@ -1,6 +1,5 @@
-const config = require('config');
 let parent = document.querySelector("#cases");
-const base_url = config.get('BaseUrl.url');
+const base_url = "https://lab6-yanis.herokuapp.com";
 
 primus = Primus.connect(base_url, {
     reconnect: {

@@ -1,5 +1,4 @@
-const config = require('config');
-const base_url = config.get('BaseUrl.url');
+const base_url = "https://lab6-yanis.herokuapp.com";
 
 primus = Primus.connect(base_url, {
     reconnect: {
