@@ -19,7 +19,7 @@ primus.on("data", (json) => {
 });
 
 function showCases() {
-    fetch('http://localhost:3000/api/v1/stats', {
+    fetch(base_url + "/api/v1/stats", {
         method: "get",
         headers: {
             'Content-Type': 'application/json'
