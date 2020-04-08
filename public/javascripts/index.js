@@ -1,5 +1,5 @@
 let parent = document.querySelector("#cases");
-const base_url = "http://localhost:3000";
+const base_url = config.get('BaseUrl.url');
 
 primus = Primus.connect(base_url, {
     reconnect: {

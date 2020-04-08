@@ -1,3 +1,5 @@
 {
-
+    "BaseUrl": {
+        "url": "https://lab6-yanis.herokuapp.com/"
+    }
 }
