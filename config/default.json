@@ -1,8 +1,5 @@
 {
     "Database": {
         "conn": "mongodb://localhost:27017/stats"
-    },
-    "BaseUrl": {
-        "url": "http://localhost:3000"
     }
 }
