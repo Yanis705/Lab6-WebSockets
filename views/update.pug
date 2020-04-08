@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Update Stats
+  body
+    section
+      div
+        label(for='number') Number of easter eggs
+        input#number(type='text' name='number')
+        label(for='country') Country
+        select#country(name='country')
+          option(value='Belgium' selected='selected') Belgium
+          option(value='Netherlands') Netherlands
+          option(value='Easter Island') Easter Island
+      button#submit(href='#') Update statistics
+
+    script(src='/javascripts/update.js')
