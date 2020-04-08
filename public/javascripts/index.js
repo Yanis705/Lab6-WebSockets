@@ -11,6 +11,7 @@ function showCases(){
     }).then(json => {
         json.data.forEach(stat => {
             let child = document.createElement('div');
+            child.setAttribute("class", "case")
             let country = document.createElement('h1');
             let cases = document.createElement('p');
             country.innerHTML = stat.country;

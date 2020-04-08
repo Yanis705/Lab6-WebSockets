@@ -1,8 +1,36 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+section {
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cases{
+  margin-top: 50px;
+}
+
+.case{
+  background-color: #F2F2F2;
+  width: 30%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.case p{
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 700px) {
+  .case{
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
