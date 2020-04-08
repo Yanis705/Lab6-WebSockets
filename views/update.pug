@@ -7,16 +7,20 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400;1,900&display=swap", rel="stylesheet")
     title Update Stats
   body
-    section
+    section.update
+      h1 Update Stats
+      div.msg
+        p.text Gelukt
       div#updateForm
-        h1 Update Stats
         label(for='country') Country
           select#country(name='country')
             option(value='Belgium' selected='selected') Belgium
             option(value='Netherlands') Netherlands
             option(value='Easter Island') Easter Island
-          label(for='number') Number of easter eggs
+          label(for='number') Number Of Cases
           input#number(type='number' name='number')
         a#submit(href='#') Update statistics
 
-    script(src='/javascripts/update.js')
+  a.nav(href='/') Go to stats page
+
+  script(src='/javascripts/update.js')
