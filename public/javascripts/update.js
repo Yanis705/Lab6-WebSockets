@@ -1,5 +1,13 @@
 const base_url = "http://localhost:3000";
 
+primus = Primus.connect(base_url, {
+    reconnect: {
+        max: Infinity // Number: The max delay before we try to reconnect.
+      , min: 500 // Number: The minimum delay before we try reconnect.
+      , retries: 10 // Number: How many times we should try to reconnect.
+    }
+});
+
 document.querySelector("#submit").addEventListener("click", function (e) {
     let number = document.querySelector("#number").value;
     let country = document.querySelector("#country").value;
@@ -29,7 +37,10 @@ document.querySelector("#submit").addEventListener("click", function (e) {
             if (json.status = 200) {
                 text.innerHTML = "Updated!";
                 msg.style.display = "inherit";
-                msg.style.backgroundColor = "rgba(19, 193, 126, 0.68)"
+                msg.style.backgroundColor = "rgba(19, 193, 126, 0.68)";
+                primus.write({
+                    "action": "addStats",
+                });
             } else {
                 text.innerHTML = "Something went wrong";
                 msg.style.display = "inherit";
